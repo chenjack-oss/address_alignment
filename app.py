@@ -40,9 +40,6 @@ async def handle_message(request: AddressAlignmentRequest) -> AddressAlignmentRe
     address = address_alignment(
         user_message, model, tokenizer, config.LABELS, config.MYSQL_CONFIG
     )
-    from time import sleep
-
-    sleep(1)
     return AddressAlignmentResponse(
         prov=address["prov"],
         city=address["city"],

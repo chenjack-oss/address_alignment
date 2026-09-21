@@ -48,4 +48,5 @@ def import_db(mysql_config, sql_file_path):
     print(f"{tag['success']} 表单数据导入成功")
 
 
-import_db(config.MYSQL_CONFIG, config.SQL_FILE_PATH)
+if __name__ == "__main__":
+    import_db(config.MYSQL_CONFIG, config.SQL_FILE_PATH)

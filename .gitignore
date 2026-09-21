@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# 训练产物：微调后的模型权重（由 token_classification.py 生成，不入库）
+finetuned/
+
+# 系统文件
+.DS_Store
+Thumbs.db

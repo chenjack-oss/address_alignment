@@ -1,7 +1,5 @@
 import re
 from typing import Optional
-import sys
-print(sys.path)
 import config
 import pymysql
 from pymysql import cursors
@@ -149,6 +147,9 @@ def address_check(text: str, address: dict[str, Optional[str]], mysql_config) ->
 
     # 取分数最高的结果
     correct_address = {k: None for k in region_type_names}
+    # 地址库中没有匹配到候选地址时，直接返回全空结果，避免 max() 抛 ValueError
+    if not scores:
+        return correct_address
     correct_address_chain = address_chains[scores.index(max(scores))]
     correct_address.update(zip(region_type_names, correct_address_chain))
 
